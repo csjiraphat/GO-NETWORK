@@ -36,11 +36,10 @@ func handleConnection(conn net.Conn) {
 		if err != nil {
 			if err == io.EOF {
 				fmt.Println("File transfer complete")
-				return
 			} else {
 				fmt.Println("Error reading:", err)
-				return
 			}
+			return
 		}
 		// Write data to file
 		file.Write(buffer[:n])
